@@ -16,7 +16,7 @@ export default function Register() {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log('Register Submitted>>>>>>>>>>>>>')
+        console.log('Register Submitted')
     }
     return (
         <div className='form-container'>
