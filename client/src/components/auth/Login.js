@@ -9,7 +9,7 @@ export default function Login() {
     const { email, password } = user
 
     const onChange = (e) => {
-        e.setUser({ ...user, [e.target.name]: [e.target.value] })
+        setUser({ ...user, [e.target.name]: [e.target.value] })
     }
 
     const onSubmit = (event) => {

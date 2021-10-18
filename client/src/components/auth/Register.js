@@ -1,5 +1,6 @@
 import React ,{useState} from 'react'
 
+//done for today up to alerts
 export default function Register() {
     const [user, setUser] = useState({
         name: '',
@@ -11,7 +12,7 @@ export default function Register() {
     const { name, email, password, password2 } = user
 
     const onChange = (e) => {
-        e.setUser({ ...user, [e.target.name]: [e.target.value] })
+        setUser({ ...user, [e.target.name]: [e.target.value] })
     }
 
     const onSubmit = (event) => {
@@ -25,7 +26,7 @@ export default function Register() {
             </h1>
             <form onSubmit={onSubmit}>
                 <div className='form-group'>
-                    <label htmlFor='name'>Name</label>
+                    <label htmlFor='name'>Name</label>  
                     <input
                         id='name'
                         type='text'
