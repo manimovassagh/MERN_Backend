@@ -16,6 +16,8 @@ import {
 } from '../types'
 
 
+
+
 const ContactState = props => {
     const initialState = {
         contacts: [

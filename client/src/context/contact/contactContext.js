@@ -1,6 +1,5 @@
 import { createContext } from "react";
 
-
-//Definr a contact Context and Export it
+//Define a Contact Context and Export it
 const ContactContext=createContext();
 export default ContactContext; 
