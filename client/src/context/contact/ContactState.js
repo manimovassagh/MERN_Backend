@@ -16,32 +16,46 @@ import {
 } from '../types'
 
 
-const contactState=props=>{
-    const initialState={
-        contacts:[
+const ContactState = props => {
+    const initialState = {
+        contacts: [
             {
-            id:1,
-            name:"Mani",
-            email:"mani.mgh@gmail.com",
-            phone:"0173445",
-            type:"professional"
-        },
+                id: 1,
+                name: "Mani",
+                email: "mani.mgh@gmail.com",
+                phone: "0173445",
+                type: "professional"
+            },
             {
-            id:2,
-            name:"Sahar",
-            email:"sahar.mgh@gmail.com",
-            phone:"6786353",
-            type:"personal"
-        },
+                id: 2,
+                name: "Sahar",
+                email: "sahar.mgh@gmail.com",
+                phone: "6786353",
+                type: "personal"
+            },
             {
-            id:3,
-            name:"Mehdi",
-            email:"mehdi.rahmaniyan@gmail.com",
-            phone:"334789456",
-            type:"professional"
-        }
-    
-    
-    ]
-    }
+                id: 3,
+                name: "Mehdi",
+                email: "mehdi.rahmaniyan@gmail.com",
+                phone: "334789456",
+                type: "professional"
+            }
+
+        ]
+    };
+    const [state, dispatch] = useReducer(contactReducer, initialState)
+    //Add Contact
+    //Delte Contact
+    // Set Current Contact
+
+
+    return (
+        <ContactContext.Provider
+
+            value={{ contacts: state.contacts }}
+        >
+            {props.children}
+        </ContactContext.Provider>
+    )
 }
+export default ContactState;
