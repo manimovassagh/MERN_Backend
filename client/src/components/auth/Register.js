@@ -1,7 +1,8 @@
-import React ,{useState} from 'react'
-
+import React ,{useState,useContext} from 'react'
+import AuthContext from '../../context/auth/authContext'
 //done for today up to alerts
 export default function Register() {
+    const auth=useContext(AuthContext)
     const [user, setUser] = useState({
         name: '',
         email: '',
@@ -10,14 +11,18 @@ export default function Register() {
 
     })
     const { name, email, password, password2 } = user
-
+    const register = auth ;
     const onChange = (e) => {
         setUser({ ...user, [e.target.name]: [e.target.value] })
     }
 
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log('Register Submitted')
+       register({
+           name,
+           email,
+           password
+       })
     }
     return (
         <div className='form-container'>
