@@ -2,7 +2,8 @@ import React ,{useState,useContext} from 'react'
 import AuthContext from '../../context/auth/authContext'
 //done for today up to alerts
 export default function Register() {
-    const auth=useContext(AuthContext)
+    const authContext = useContext(AuthContext);
+    const { register, error, clearErrors, isAuthenticated } = authContext;
     const [user, setUser] = useState({
         name: '',
         email: '',
@@ -11,14 +12,14 @@ export default function Register() {
 
     })
     const { name, email, password, password2 } = user
-    const register = auth ;
+    
     const onChange = (e) => {
         setUser({ ...user, [e.target.name]: [e.target.value] })
     }
 
     const onSubmit = (event) => {
         event.preventDefault();
-       register({
+        register({
            name,
            email,
            password
@@ -68,7 +69,7 @@ export default function Register() {
                     <label htmlFor='password2'>Confirm Password</label>
                     <input
                         id='password2'
-                        type='password'
+                        type='password' 
                         name='password2'
                         value={password2}
                         onChange={onChange}

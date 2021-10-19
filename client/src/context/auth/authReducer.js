@@ -29,9 +29,9 @@ switch (action.type) {
              user:null,
              error:action.payload
          }
-        break;
+     
 
-    default:
-        break;
+    default: return state
+      
 }
 }
